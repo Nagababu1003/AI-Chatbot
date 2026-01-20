@@ -37,10 +37,7 @@ public class ChatController {
     @PostMapping
     public ResponseEntity<ChatResponse> chat(
             @Valid @RequestBody ChatRequest request) {
-        if (request.getMessage() == null || request.getMessage().isBlank()) {
-            return ResponseEntity.badRequest()
-                    .body(new ChatResponse("Message cannot be empty"));
-        }
+
         String reply = chatService.chat(request.getMessage());
         return ResponseEntity.ok(new ChatResponse(reply));
     }
