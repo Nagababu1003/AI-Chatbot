@@ -15,6 +15,9 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public String chat(String message) {
-        return chatClient.call(message);
+        return chatClient.prompt()
+                .user(message)
+                .call()
+                .content();
     }
 }
