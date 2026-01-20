@@ -32,7 +32,7 @@ public class ChatController {
     }
 
     
-    @PostMapping("/api/chat")
+    @PostMapping
     public ResponseEntity<ChatResponse> chat(@RequestBody ChatRequest request) {
         if (request.getMessage() == null || request.getMessage().isBlank()) {
             return ResponseEntity.badRequest()
