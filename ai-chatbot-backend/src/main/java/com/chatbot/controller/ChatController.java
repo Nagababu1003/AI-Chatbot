@@ -20,12 +20,14 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/chat")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "https://ai-chatbot-1-zoe0.onrender.com")
 public class ChatController {
 
     private final ChatService chatService;
-
+    
+    public ChatController(ChatService chatService) {
+        this.chatService = chatService;
+    }
     @GetMapping
     public ResponseEntity<String> health() {
         return ResponseEntity.ok("Chat API is running");
