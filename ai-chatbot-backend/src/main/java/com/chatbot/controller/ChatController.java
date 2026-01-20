@@ -31,11 +31,17 @@ public class ChatController {
         return ResponseEntity.ok("Chat API is running");
     }
 
-    @PostMapping
-    public ResponseEntity<ChatResponse> chat(
-            @Valid @RequestBody ChatRequest request) {
-        return ResponseEntity.ok(chatService.chat(request));
+    
+    @PostMapping("/api/chat")
+    public ResponseEntity<ChatResponse> chat(@RequestBody ChatRequest request) {
+        if (request.getMessage() == null || request.getMessage().isBlank()) {
+            return ResponseEntity.badRequest()
+                    .body(new ChatResponse("Message cannot be empty"));
+        }
+        String reply = chatService.chat(request.getMessage());
+        return ResponseEntity.ok(new ChatResponse(reply));
     }
+
 
     @GetMapping("/history")
     public ResponseEntity<List<ChatMessage>> history() {
