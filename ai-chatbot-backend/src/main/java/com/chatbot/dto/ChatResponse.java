@@ -1,20 +1,10 @@
 package com.chatbot.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class ChatResponse {
-
-    private String reply;
-
-    public ChatResponse() {}
-
-    public ChatResponse(String reply) {
-        this.reply = reply;
-    }
-
-    public String getReply() {
-        return reply;
-    }
-
-    public void setReply(String reply) {
-        this.reply = reply;
-    }
+	private String reply;
 }
