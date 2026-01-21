@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/chat")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "https://ai-chatbot-srli.vercel.app/")
+@CrossOrigin(origins = "https://ai-chatbot-srli-melfobb5o-nagababu1003s-projects.vercel.app/")
 public class ChatController {
 
     private final ChatService chatService;
