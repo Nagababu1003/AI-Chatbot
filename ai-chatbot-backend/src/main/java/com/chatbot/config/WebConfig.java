@@ -11,7 +11,8 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins(
-                    "https://ai-chatbot-1-zoe0.onrender.com"
+                    "https://ai-chatbot-1-zoe0.onrender.com",
+                    "https://ai-chatbot-srli-melfobb5o-nagababu1003s-projects.vercel.app/"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
