@@ -6,7 +6,11 @@ import ThemeToggle from "../components/ThemeToggle";
 import { sendMessage } from "../services/chatApi";
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+  { sender: "user", text: "Hello" },
+  { sender: "ai", text: "Hi! How can I help you?" }
+]);
+
   const [loading, setLoading] = useState(false);
 
   const send = async (e) => {
