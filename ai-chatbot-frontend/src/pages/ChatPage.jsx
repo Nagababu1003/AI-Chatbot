@@ -41,8 +41,9 @@ export default function ChatPage() {
           ))}
           {loading && <TypingIndicator />}
         </div>
-
+        
         <ChatInput onSend={send} loading={loading} />
+        <ChatHistory messages={messages} isTyping={isTyping} />
       </div>
     </div>
   );
