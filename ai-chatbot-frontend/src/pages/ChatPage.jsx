@@ -6,10 +6,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import { sendMessage } from "../services/chatApi";
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState([
-  { sender: "user", text: "Hello" },
-  { sender: "ai", text: "Hi! How can I help you?" }
-]);
+  const [messages, setMessages] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
@@ -43,7 +40,6 @@ export default function ChatPage() {
         </div>
         
         <ChatInput onSend={send} loading={loading} />
-        <ChatHistory messages={messages} isTyping={isTyping} />
       </div>
     </div>
   );
